@@ -77,7 +77,7 @@ Query Options:
 	updated_at_min	Show customers last updated after date (format: 2014-04-25T16:15:47-04:00)
 	updated_at_max	Show customers last updated before date (format: 2014-04-25T16:15:47-04:00)
 	limit		Amount of results (default: 50) (maximum: 250)
-	page		Page to show(default: 1)
+	page		Page to show (default: 1)
 	fields		comma-separated list of fields to include in the response
 */
 func (c *Client) GetCustomers(query url.Values) ([]*Customer, error) {

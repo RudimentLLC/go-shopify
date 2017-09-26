@@ -93,25 +93,25 @@ func (c *Client) GetProduct(productID int) (*Product, error) {
 
 /*
 Query Options:
-	ids			Comma-separated list of product ids.
-	limit			Amount of results. (default: 50) (maximum: 250)
-	page			Page to show. (default: 1)
-	since_id		Restrict results to after the specified ID.
-	title			Filter by product title.
-	vendor			Filter by product vendor.
-	handle			Filter by product handle.
-	product_type		Filter by product type.
-	collection_id		Filter by collection id.
-	created_at_min		Show products created after date. (format: 2014-04-25T16:15:47-04:00)
-	created_at_max		Show products created before date. (format: 2014-04-25T16:15:47-04:00)
-	updated_at_min		Show products last updated after date. (format: 2014-04-25T16:15:47-04:00)
-	updated_at_max		Show products last updated before date. (format: 2014-04-25T16:15:47-04:00)
-	published_at_min	Show products published after date. (format: 2014-04-25T16:15:47-04:00)
-	published_at_max	Show products published before date. (format: 2014-04-25T16:15:47-04:00)
-	published_status	published 	Show only published products.
-				unpublished  	Show only unpublished products.
-				any 		Show all products (default).
-	fields	Comma-separated list of fields to include in the response.
+	ids			Comma-separated list of product ids
+	limit			Amount of results (default: 50) (maximum: 250)
+	page			Page to show (default: 1)
+	since_id		Restrict results to after the specified ID
+	title			Filter by product title
+	vendor			Filter by product vendor
+	handle			Filter by product handle
+	product_type		Filter by product type
+	collection_id		Filter by collection id
+	created_at_min		Show products created after date (format: 2014-04-25T16:15:47-04:00)
+	created_at_max		Show products created before date (format: 2014-04-25T16:15:47-04:00)
+	updated_at_min		Show products last updated after date (format: 2014-04-25T16:15:47-04:00)
+	updated_at_max		Show products last updated before date (format: 2014-04-25T16:15:47-04:00)
+	published_at_min	Show products published after date (format: 2014-04-25T16:15:47-04:00)
+	published_at_max	Show products published before date (format: 2014-04-25T16:15:47-04:00)
+	published_status	published 	Show only published products
+				unpublished  	Show only unpublished products
+				any 		Show all products (default)
+	fields	Comma-separated list of fields to include in the response
 */
 
 func (c *Client) GetProducts(query url.Values) ([]*Product, error) {
