@@ -8,46 +8,46 @@ import (
 )
 
 type Customer struct {
-	ID                  int               `json:"id,omitempty"`
-	Email               string            `json:"email,omitempty"`
-	AcceptsMarketing    bool              `json:"accepts_marketing,omitempty"`
-	CreatedAt           string            `json:"created_at,omitempty"`
-	UpdatedAt           string            `json:"updated_at,omitempty"`
-	FirstName           string            `json:"first_name,omitempty"`
-	LastName            string            `json:"last_name,omitempty"`
+	ID                  int               `json:"id"`
+	Email               string            `json:"email"`
+	AcceptsMarketing    bool              `json:"accepts_marketing"`
+	CreatedAt           string            `json:"created_at"`
+	UpdatedAt           string            `json:"updated_at"`
+	FirstName           string            `json:"first_name"`
+	LastName            string            `json:"last_name"`
 	OrdersCount         int               `json:"orders_count"`
-	State               string            `json:"state,omitempty"`
-	TotalSpent          string            `json:"total_spent,omitempty"`
-	LastOrderID         int               `json:"last_order_id,omitempty"`
-	Note                string            `json:"note,omitempty"`
-	VerifiedEmail       bool              `json:'verified_email,omitempty"`
-	MultipassIdentifier string            `json:"multipass_identifier,omitempty"`
-	TaxExempt           bool              `json:"tax_exempt,omitempty"`
-	Phone               string            `json:"phone,omitempty"`
+	State               string            `json:"state"`
+	TotalSpent          string            `json:"total_spent"`
+	LastOrderID         int               `json:"last_order_id"`
+	Note                string            `json:"note"`
+	VerifiedEmail       bool              `json:'verified_email"`
+	MultipassIdentifier string            `json:"multipass_identifier"`
+	TaxExempt           bool              `json:"tax_exempt"`
+	Phone               string            `json:"phone"`
 	Tags                string            `json:"tags"`
-	LastOrderName       string            `json:"last_order_name,omitempty"`
-	Addresses           []CustomerAddress `json:"addresses,omitempty"`
-	DefaultAddress      CustomerAddress   `json:"default_address,omitempty"`
+	LastOrderName       string            `json:"last_order_name"`
+	Addresses           []CustomerAddress `json:"addresses"`
+	DefaultAddress      CustomerAddress   `json:"default_address"`
 }
 
 type CustomerAddress struct {
-	ID           int    `json:"id,omitempty"`
-	CustomerID   int    `json:"customer_id,omitempty"`
-	FirstName    string `json:"first_name,omitempty"`
-	LastName     string `json:"last_name,omitempty"`
-	Company      string `json:"company,omitempty"`
-	Address1     string `json:"address1,omitempty"`
-	Address2     string `json:"address2,omitempty"`
-	City         string `json:"city,omitempty"`
-	Province     string `json:"province,omitempty"`
-	Country      string `json:"country,omitempty"`
-	Zip          string `json:"zip,omitempty"`
-	Phone        string `json:"phone,omitempty"`
-	Name         string `json:"name,omitempty"`
-	ProvinceCode string `json:"province_code,omitempty"`
-	CountryCode  string `json:"country_code,omitempty"`
-	CountryName  string `json:"country_name,omitempty"`
-	Default      bool   `json:"default,omitempty"`
+	ID           int    `json:"id"`
+	CustomerID   int    `json:"customer_id"`
+	FirstName    string `json:"first_name"`
+	LastName     string `json:"last_name"`
+	Company      string `json:"company"`
+	Address1     string `json:"address1"`
+	Address2     string `json:"address2"`
+	City         string `json:"city"`
+	Province     string `json:"province"`
+	Country      string `json:"country"`
+	Zip          string `json:"zip"`
+	Phone        string `json:"phone"`
+	Name         string `json:"name"`
+	ProvinceCode string `json:"province_code"`
+	CountryCode  string `json:"country_code"`
+	CountryName  string `json:"country_name"`
+	Default      bool   `json:"default"`
 }
 
 type GetCustomerResponse struct {

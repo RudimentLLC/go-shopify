@@ -5,6 +5,18 @@ import (
 	"testing"
 )
 
+/*
+client.Client.ResponseReader = func(resp *http.Response, v interface{}) error {
+        body, err := ioutil.ReadAll(resp.Body)
+        if err != nil {
+                t.Fatal(err)
+        }
+
+        fmt.Printf("Body: %v\n", string(body))
+        return nil
+}
+*/
+
 func NewTestClient(t *testing.T) *Client {
 	domain := fetchEnvVar(t, "SHOPIFY_TEST_DOMAIN")
 	key := fetchEnvVar(t, "SHOPIFY_TEST_KEY")

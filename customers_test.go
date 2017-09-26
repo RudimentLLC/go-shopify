@@ -7,18 +7,6 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-/*
-client.Client.ResponseReader = func(resp *http.Response, v interface{}) error {
-	body, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	fmt.Printf("Body: %v\n", string(body))
-	return nil
-}
-*/
-
 func TestGetCustomers(t *testing.T) {
 	client := NewTestClient(t)
 	customers, err := client.GetCustomers(url.Values{})
