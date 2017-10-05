@@ -7,6 +7,15 @@ import (
 	"github.com/zpatrick/rclient"
 )
 
+type CreateCustomerMetafieldRequest struct {
+	Customer CustomerMetafields `json:"customer"`
+}
+
+type CustomerMetafields struct {
+	ID         int         `json:"id"`
+	Metafields []Metafield `json:"metafields"`
+}
+
 type Customer struct {
 	ID                  int               `json:"id"`
 	Email               string            `json:"email"`
@@ -58,6 +67,23 @@ type GetCustomersResponse struct {
 	Customers []*Customer `json:"customers"`
 }
 
+func (c *Client) CreateCustomerMetafield(customerID int, metafield Metafield) (*Metafield, error) {
+	req := CreateCustomerMetafieldRequest{
+		Customer: CustomerMetafields{
+			ID:         customerID,
+			Metafields: []Metafield{metafield},
+		},
+	}
+
+	var resp CreateMetafieldResponse
+	path := fmt.Sprintf("/admin/customers/%d.json", customerID)
+	if err := c.Client.Put(path, req, &resp); err != nil {
+		return nil, err
+	}
+
+	return resp.Metafield, nil
+}
+
 func (c *Client) GetCustomer(customerID int) (*Customer, error) {
 	var resp GetCustomerResponse
 	path := fmt.Sprintf("/admin/customers/%d.json", customerID)
@@ -87,4 +113,8 @@ func (c *Client) GetCustomers(query url.Values) ([]*Customer, error) {
 	}
 
 	return resp.Customers, nil
+}
+
+func (c *Client) GetCustomerMetafields(customerID int) ([]Metafield, error) {
+	return nil, nil
 }
